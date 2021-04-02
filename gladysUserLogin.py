@@ -5,6 +5,7 @@ import io
     Module: gladysUserLogin
     Description: This module checks if the username is a valid email address or not and logs the user in.
 """
+# #start code by Nhi Tran
 def login():
     emailAddress = ""
     password = ""
@@ -21,3 +22,4 @@ def login():
             break
 
     return emailAddress
+##end code by Nhi Tran

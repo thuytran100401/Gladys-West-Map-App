@@ -6,12 +6,12 @@ import gladysSatellite as satellite
 import gladysUserLogin as userLogin
 
 """
-    Student: Khuong Le
+    Student: Thu Ngo
     Module: gladysUserInterface
-    Description: This module does …
-"""
- 
- 
+    Description: This module does This gladysUserInterface that should present a text-based menu for users to do the operations.
+""" 
+#start code by Thu Ngo 
+
 def runTests():
    """
        tests some module functions
@@ -87,13 +87,14 @@ def runApp(userName):
     
     elif firstChar == 'q':
       userQuit = True
-      
+
     else:
       print("ERROR: " + firstChar + " is not a valid command")
 
   print("\n")
   print("Thank you for using the Gladys West Map App!")
   print("\n")
-
+  
+#end code by Thu Ngo
 
 

@@ -2,11 +2,12 @@ import io
 import json
 
 """
-    Student: Nhi Pham
+    Student: Mercedez Tran
     Module: gladysSatellite
-    Description: This module reads satellite data from a json file and find a matching x, y to return the value. 
+    Description: This module opens and reads the altitude data file from disk using the readSat function. 
 """
 
+# start code by Mercedez Tran
 def readSat(sat, pathToJSONDataFiles):
     """
         reads satellite data from a json file
@@ -32,9 +33,7 @@ def readSat(sat, pathToJSONDataFiles):
 def gpsValue(x, y, sat):
     value = 0
     """
-        read the files
-        find matching x and y
-        return value for each sat
+       It uses the satellite to pinpoint user's location and desired location to find best possible route
     """
     pathToJSONDataFiles = './data'
 
@@ -48,4 +47,4 @@ def gpsValue(x, y, sat):
             value = i["value"]
     return value 
 
-
+#end code by Mercedez Tran
