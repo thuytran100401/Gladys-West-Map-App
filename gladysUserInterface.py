@@ -53,10 +53,9 @@ def runApp(userName):
     print("\nUser: " + userName)
     print("\ncurrent position   : x =", current[0], " , y = ", current[1])
     print("destination position : x = ", destination[0], " , y = ",destination[1])
-    print("distance             : ", round(compute.distance(current, destination))
+    print("distance             : ", round(compute.distance(current, destination),2))
 
-    # menu
-    print()
+    # menu    
     print("[c] to set current position")
     print("[d] to set destination position")
     print("[m] to map - which tells the distance")
@@ -85,6 +84,10 @@ def runApp(userName):
 
     elif firstChar == 't':
       runtests()
+    
+    elif firstChar == 'q':
+      userQuit = True
+      
     else:
       print("ERROR: " + firstChar + " is not a valid command")
 

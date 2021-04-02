@@ -30,7 +30,7 @@ def readSat(sat, pathToJSONDataFiles):
 
 
 def gpsValue(x, y, sat):
-    
+    value = 0
     """
         read the files
         find matching x and y
@@ -42,10 +42,10 @@ def gpsValue(x, y, sat):
     data = readSat(sat, pathToJSONDataFiles)
 
     # get gps value from the file
-    value = 0
+   
     for i in data:
         if i["x"]== x and i["y"] == y:
-            value == i['value']
+            value = i["value"]
     return value 
 
 
