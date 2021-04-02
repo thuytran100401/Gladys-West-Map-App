@@ -1,4 +1,6 @@
 import io
+import math
+
 import gladysCompute as compute
 import gladysSatellite as satellite
 import gladysUserLogin as userLogin
@@ -38,23 +40,29 @@ def runApp(userName):
   """
     runs the app
   """
+  current = [-1,-1]
+  destination = [-1,-1]
+
   userQuit = False
   while (not userQuit):
 
-    print()
-    print("--- Gladys West Map App ---")
-    print()
+    print("---------------------------")
+    print("    Gladys West Map App    ")
+    print("---------------------------")
+
+    print("\nUser: " + userName)
+    print("\ncurrent position   : x =", current[0], " , y = ", current[1])
+    print("destination position : x = ", destination[0], " , y = ",destination[1])
+    print("distance             : ", round(compute.distance(current, destination))
 
     # menu
+    print()
     print("[c] to set current position")
     print("[d] to set destination position")
     print("[m] to map - which tells the distance")
     print("[t] to run module tests")
     print("[q] to quit")
 
-    print()
-    print("-- Welcome to the Gladys West Map App --")
-    print("Type t to run tests or q to quit")
     print()
 
     # get first character of input
@@ -64,42 +72,25 @@ def runApp(userName):
 
     # set current location
     if firstChar == 'c':
+      current[0] = int(input("Enter a x position: "))
+      current[1] = int(input("Enter a y position: "))
+      
+    
+    elif firstChar == 'd':
+      destination[0] = int(input("Enter a x position: "))
+      destination[1] = int(input("Enter a y position: "))
+    
+    elif firstChar == 'm':
+      print(compute.distance(current, destination))
 
-           # set destination position
-           if firstChar == 'd':
-
-               # map - tells the distance
-               if firstChar == 'm':
-
-                   # quit
-                   if firstChar == 'q':
-                       userQuit = True
-
-       else:
-           print("ERROR: " + firstChar + " is not a valid command")
+    elif firstChar == 't':
+      runtests()
+    else:
+      print("ERROR: " + firstChar + " is not a valid command")
 
   print("\n")
   print("Thank you for using the Gladys West Map App!")
   print("\n")
 
 
-@app.route('/login', methods=['POST'])
-def do_admin_login():
-  login = request.form
-
-  userName = login['username']
-  password = login['password']
-
-  cur = mariadb_connect.cursor(buffered=True)
-  data = cur.execute('SELECT * FROM Login WHERE username=%s', (userName))
-  data = cur.fetchone()[2]
-
-  if sha256_crypt.verify(password, data):
-    account = True
-
-  if account:
-    session['logged_in'] = True
-  else:
-    flash('wrong password!')
-  return home()
 
