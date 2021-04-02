@@ -11,15 +11,15 @@ def gpsAverage(x,y):
 """
 Calculate average gps value of latitude, longitude, altitude, and time
 """
-value = satellite.gpsValue(x,y,"altitude")+satellite.gpsValue(x,y,"longitude")+satellite.gpsValue(x,y,"latitude")+satellite.gpsValue(x,y,"time")
-average = value/4
-return average
+     value = satellite.gpsValue(x,y,"altitude")+satellite.gpsValue(x,y,"longitude")+satellite.gpsValue(x,y,"latitude")+satellite.gpsValue(x,y,"time")
+     average = value/4
+     return average
  
 def distance(current,destination):
 """
 Calculate difference of average gps values of current position and destination position
 """
  
-distance = gpsAverage(xdestination,ydestination)-gpsAverage(xcurrent,ycurrent)
-return distance
+     distance = gpsAverage(xdestination,ydestination)-gpsAverage(xcurrent,ycurrent)
+     return distance
 # end of code by Lo Tuan

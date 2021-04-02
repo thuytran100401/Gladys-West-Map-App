@@ -2,6 +2,7 @@ import io
 import gladysCompute as compute
 import gladysSatellite as satellite
 import gladysUserLogin as userLogin
+
 """
     Student: Khuong Le
     Module: gladysUserInterface
@@ -19,9 +20,7 @@ def runTests():
    average = compute.gpsAverage(4, 5)
    print("average = ", average)
 
-   # delete the remaining code *in this function* and replace it with
-   # your code. add more code to do what the assignment asks you to do.
-   # add 3 more tests of different functions in different modules
+   
    print("hello!")
 
 
@@ -36,35 +35,35 @@ def start():
 
 
 def runApp(userName):
-   """
-   runs the app
-   """
-   userQuit = False
-   while (not userQuit):
+  """
+    runs the app
+  """
+  userQuit = False
+  while (not userQuit):
 
-       print()
-       print("--- Gladys West Map App ---")
-       print()
+    print()
+    print("--- Gladys West Map App ---")
+    print()
 
-       # menu
-       print("[c] to set current position")
-       print("[d] to set destination position")
-       print("[m] to map - which tells the distance")
-       print("[t] to run module tests")
-       print("[q] to quit")
+    # menu
+    print("[c] to set current position")
+    print("[d] to set destination position")
+    print("[m] to map - which tells the distance")
+    print("[t] to run module tests")
+    print("[q] to quit")
 
-       print()
-       print("-- Welcome to the Gladys West Map App --")
-       print("Type t to run tests or q to quit")
-       print()
+    print()
+    print("-- Welcome to the Gladys West Map App --")
+    print("Type t to run tests or q to quit")
+    print()
 
-       # get first character of input
-       userInput = input("Enter a command: ")
-       lowerInput = userInput.lower()
-       firstChar = lowerInput[0:1]
+    # get first character of input
+    userInput = input("Enter a command: ")
+    lowerInput = userInput.lower()
+    firstChar = lowerInput[0:1]
 
-       # set current location
-       if firstChar == 'c':
+    # set current location
+    if firstChar == 'c':
 
            # set destination position
            if firstChar == 'd':
@@ -79,9 +78,9 @@ def runApp(userName):
        else:
            print("ERROR: " + firstChar + " is not a valid command")
 
-   print("\n")
-   print("Thank you for using the Gladys West Map App!")
-   print("\n")
+  print("\n")
+  print("Thank you for using the Gladys West Map App!")
+  print("\n")
 
 
 @app.route('/login', methods=['POST'])

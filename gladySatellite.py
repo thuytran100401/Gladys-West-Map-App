@@ -8,6 +8,10 @@ import json
 """
 
 def readSat(sat, pathToJSONDataFiles):
+    """
+        reads satellite data from a json file
+        Students do NOT need to change the readSat function.
+    """
     # data file path
     fileName = sat + "-satellite.jon"
     filePath = pathToJSONDateFiles + "/" + fileName
@@ -26,6 +30,11 @@ def readSat(sat, pathToJSONDataFiles):
 
 
 def gpsValue(x, y, sat):
+    """
+        read the files
+        find matching x and y
+        return value for each sat
+    """
     pathToJSONDataFiles = "C:/Users/thuy/Downloads/Gladys-West-Map-App/data"
 
     # read the satellite data
@@ -34,10 +43,7 @@ def gpsValue(x, y, sat):
     # get gps value from the file
     for i in data:
         if x == i['x'] and y == i['y']:
-            return i['value']
+            value == i['value']
+        return value 
 
 
-x = input("x: ")
-y = input("y: ")
-sat = input("sat: ")
-gpsValue(x, y, sat)
